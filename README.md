@@ -12,4 +12,6 @@ Uma constante é qualquer passo que não é dependente(escalonado) a entrada da 
 Para algoritmos que são constantes e independem 
 
 No Big O temos uma hierarquia de crescimento:
-<img src="https://github.com/user-attachments/assets/5e7f4fc0-3fe0-458e-8642-501220e5a8f1">
+
+
+<img src="https://github.com/user-attachments/assets/5e7f4fc0-3fe0-458e-8642-501220e5a8f1" width="300" height="200">
