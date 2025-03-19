@@ -115,6 +115,18 @@ Se você tiver 5 pães, 5 recheios e 5 molhos, são 5³ = 125 combinações!
 
 Um logaritmo é a potência à qual um número precisa ser elevado para obter outro número
 Em ciência da computação, a menos que especificado de outra forma, podemos sempre assumir que o número que queremos elevar à potência da soma é dois.
+
+Em termos simples, log n é o número de vezes que você pode dividir n por 2 antes de chegar a 1.
+
+O que O(log n) indica sobre o algoritmo?
+Significa que a cada passo a quantidade de dados que você precisa considerar diminui pela metade, e o número de passos necessários cresce muito devagar, mesmo que n aumente bastante.
+
+Exemplos clássicos de algoritmos O(log n):
+
+Busca Binária: Em uma lista ordenada, você compara o elemento do meio e elimina metade da lista a cada tentativa. A cada passo, o espaço de busca é dividido por 2.
+
+Algumas operações em árvores balanceadas (como AVL ou Red-Black Tree): Operações como inserção, remoção e busca costumam ser O(log n) porque a altura da árvore cresce logaritmicamente em relação ao número de elementos.
+
 Exemplo: 
 ?^?= 8 de acordo com a afirmação acima temos 2^?=8
 Em outra forma isto é Log2 8=?
@@ -124,4 +136,41 @@ No exemplo em arquivo5 iniciamos chamando a função com logFunc(8) depois a cha
 
 Então como multiplicação é o inverso da divisão podemos ver o resultado da potência 2³ fazendo 1x2x2x2=8
 
+<table border="1" cellpadding="8" cellspacing="0">
+  <caption><strong>Resumindo a diferença</strong></caption>
+  <thead>
+    <tr>
+      <th>Iterativo</th>
+      <th>Recursivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Usa loops (<code>for</code>/<code>while</code>)</td>
+      <td>Usa chamadas de função (recursão)</td>
+    </tr>
+    <tr>
+      <td>Menos consumo de memória (sem pilha de chamadas)</td>
+      <td>Mais consumo de memória (pilha de chamadas recursivas)</td>
+    </tr>
+    <tr>
+      <td>Geralmente mais performático</td>
+      <td>Pode ser mais fácil de entender, dependendo do caso</td>
+    </tr>
+    <tr>
+      <td>Exemplo: <code>busca_binaria_iterativa</code></td>
+      <td>Exemplo: <code>busca_binaria_recursiva</code></td>
+    </tr>
+  </tbody>
+</table>
 
+
+<h3>O(log n) iterativo</h3>
+
+Utilizamos o mesmo exemplo porém fazendo de forma iteratica, teremos 2.2.2=8= 2³ e se podemos multiplicar 2 3 vezes para chegar a oito, se fizermos o caminho inverso se dividirmos 8 por dois três vezes chegamos a 1.
+Para saber o n em o O(log n) precisamos olhar a quantidade de iterações necessárias para  chegar a menor quantidade possível.
+
+<h3>Busca binária & O(log n)</h3>
+
+Se você não avança (+1) ou não recua (-1), você não elimina nada.
+Você vai sempre cair no mesmo valor de meio e vai repetir a chamada infinita.
