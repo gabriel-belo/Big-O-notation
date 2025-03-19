@@ -174,3 +174,7 @@ Para saber o n em o O(log n) precisamos olhar a quantidade de iterações necess
 
 Se você não avança (+1) ou não recua (-1), você não elimina nada.
 Você vai sempre cair no mesmo valor de meio e vai repetir a chamada infinita.
+
+<h3>O(n log n)</h3>
+O(n log n ) é nada mais que O(n * log n)
+Então nós temos um loop maior que tem O(log n) e dentro deste temos um loop O(n) e multiplacando os dois nós temos a quantidade de vezes que o bloco de código no loop interno será executado. No caso do exemplo temos n= 4 então O(n)= O(4) e O(log n) = O(2) que 4 * 2= 8.
