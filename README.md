@@ -113,6 +113,8 @@ Se você tiver 5 pães, 5 recheios e 5 molhos, são 5³ = 125 combinações!
 
 <h3>O(log n)</h3>
 
+<h4>log n é quantas vezes você consegue dividir um número por 2 até chegar em 1.</h4>
+
 Um logaritmo é a potência à qual um número precisa ser elevado para obter outro número
 Em ciência da computação, a menos que especificado de outra forma, podemos sempre assumir que o número que queremos elevar à potência da soma é dois.
 
@@ -178,3 +180,33 @@ Você vai sempre cair no mesmo valor de meio e vai repetir a chamada infinita.
 <h3>O(n log n)</h3>
 O(n log n ) é nada mais que O(n * log n)
 Então nós temos um loop maior que tem O(log n) e dentro deste temos um loop O(n) e multiplacando os dois nós temos a quantidade de vezes que o bloco de código no loop interno será executado. No caso do exemplo temos n= 4 então O(n)= O(4) e O(log n) = O(2) que 4 * 2= 8.
+
+<h4>Análise do código no arquivo 10</h4>
+Como funciona o tempo de execução do MergeSort?
+O mergeSort tem duas partes principais:
+Dividir a lista no meio (recursão)
+Mesclar (merge) as listas ordenadas
+A complexidade total vem dessas duas etapas combinadas.
+
+1️⃣ Divisão: Quantas vezes a lista é dividida?
+Cada vez que você divide a lista, você parte ela no meio.
+Isso acontece até sobrar uma lista de 1 elemento.
+Se a lista tem n elementos, quantas vezes dá para dividir por 2?
+➡ log n vezes! (base 2, porque é sempre metade)
+
+Então, o número de níveis de divisão da árvore recursiva é log n.
+
+2️⃣ Mesclagem (merge): Quanto tempo demora em cada nível?
+Em cada nível, você percorre todos os n elementos para combinar (merge) as listas ordenadas.
+Mesmo com várias listas pequenas, a soma dos tamanhos delas sempre dá n elementos no nível atual.
+
+➡ Ou seja, cada nível da árvore custa O(n) para fazer o merge.
+
+3️⃣ Multiplica as duas coisas:
+log n níveis de recursão
+Em cada nível, o custo é O(n)
+
+De onde vem o log n?
+Vem da profundidade da árvore de chamadas recursivas (quantas vezes a lista é dividida).
+De onde vem o n?
+Vem da quantidade de elementos processados em cada merge (passa pela lista inteira a cada nível).
