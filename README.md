@@ -210,3 +210,15 @@ De onde vem o log n?
 Vem da profundidade da árvore de chamadas recursivas (quantas vezes a lista é dividida).
 De onde vem o n?
 Vem da quantidade de elementos processados em cada merge (passa pela lista inteira a cada nível).
+
+
+<h3>O(2^n)</h3>
+<h4>Fibonacci & Complexidade exponencial</h4>
+Em cada nível o número de chamadas para a função Finonacci aumenta exponencialmente
+
+No caso do algoritmo no arquivo 11 temos O(2^n-1) porém como ignoramos constantes no Big O temos O(2^n)
+
+<h3>O(n!)</h3>
+<h4>Fatorial</h4>
+
+
