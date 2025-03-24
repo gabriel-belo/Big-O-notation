@@ -276,4 +276,30 @@ A quantidade de trabalho dobra a cada novo nível!
 <h3>O(n!)</h3>
 <h4>Fatorial</h4>
 
+O que significa O(n!)?
+👉 O(n!), ou fatorial de n, representa um crescimento extremamente rápido, até mais rápido que O(2ⁿ).
+👉 Quando você vê O(n!), está lidando com problemas que precisam explorar todas as possíveis ordens, sequências ou combinações de n elementos, sem atalhos.
+
+Exemplo do dia a dia (sem código!)
+🎲 Organizando pessoas ou objetos
+Imagina que você vai organizar 5 livros diferentes em uma prateleira.
+
+Quantas ordens diferentes você pode organizar esses livros?
+A resposta é 5! = 120 ordens possíveis.
+
+Exemplo em algoritmos (O(n!) aparece onde?)
+
+Permutação de elementos:
+Exemplo: gerar todas as ordens possíveis de n itens diferentes.
+
+Problemas de força bruta:
+Quando você testa cada sequência possível sem atalhos ou regras de corte.
+
+Problemas clássicos:
+
+Caixeiro Viajante (TSP): encontrar a menor rota que passa por várias cidades e volta ao ponto inicial (modo força bruta testa n! rotas).
+
+Permutação de senhas, combinando diferentes elementos.
+
+
 
