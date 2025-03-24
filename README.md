@@ -218,6 +218,61 @@ Em cada nível o número de chamadas para a função Finonacci aumenta exponenci
 
 No caso do algoritmo no arquivo 11 temos O(2^n-1) porém como ignoramos constantes no Big O temos O(2^n)
 
+É quando o número de operações dobra toda vez que você aumenta a entrada em 1.
+
+👉 Se você tem n = 1, são 2¹ = 2 operações
+👉 Se n = 2, são 2² = 4 operações
+👉 Se n = 3, são 2³ = 8 operações
+👉 Se n = 10, são 2¹⁰ = 1024 operações!
+
+O crescimento é exponencial, ou seja, explode muito rápido.
+
+Por isso, O(2ⁿ) é considerado muito custoso em termos de tempo de execução.
+
+<h4>Exemplo do dia a dia</h4>
+Imagina uma árvore de decisões, como:
+
+Você está jogando um jogo de perguntas, onde:
+<ol>
+  <li>Cada pergunta tem 2 respostas possíveis: sim ou não.</li>
+  <li>E cada resposta leva a outra pergunta, que tem 2 novas respostas… e assim vai.</li>  
+</ol>
+
+Se você tem 1 pergunta inicial, só tem 2 opções.
+
+Mas se você tem n perguntas em sequência, o número de caminhos possíveis será 2ⁿ.
+
+<ul>
+  <li>1 pergunta → 2 possibilidades</li>
+  <li>2 perguntas → 4 possibilidades</li>
+  <li>3 perguntas → 8 possibilidades</li>
+  <li>10 perguntas → 1024 possibilidades </li>
+</ul>
+
+A quantidade de trabalho dobra a cada novo nível!
+
+<h4>Como saber que é O(2ⁿ)?</h4>
+<ol>
+  <li>A cada etapa, o número de operações dobra.</li>
+  <li>Não é linear (O(n)) e nem quadrático (O(n²)) porque o crescimento é muito mais rápido.</li>
+  <li>
+    Geralmente aparece em:
+    <ul>
+        <li>Algoritmos de recursão sem otimização.</li>
+        <li>Árvores binárias que exploram todos os caminhos possíveis.</li>
+        <li>Problemas de combinações ou subconjuntos (subset problems).</li>
+        <li>Alguns algoritmos de backtracking, força bruta e DFS em árvores.</li>
+    </ul>
+  </li>
+</ol>
+
+
+
+
+
+
+
+
 <h3>O(n!)</h3>
 <h4>Fatorial</h4>
 
