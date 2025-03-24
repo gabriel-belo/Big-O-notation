@@ -2,9 +2,10 @@
 
 def f(n):
     if n == 0:
-        return print('*' * 10)
+        print('*' * 10)
+        return
 
     for i in range(n):
         f(n-1)
 
-print(f(10))
+print(f(3))
