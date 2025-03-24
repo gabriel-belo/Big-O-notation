@@ -300,6 +300,3 @@ Problemas clássicos:
 Caixeiro Viajante (TSP): encontrar a menor rota que passa por várias cidades e volta ao ponto inicial (modo força bruta testa n! rotas).
 
 Permutação de senhas, combinando diferentes elementos.
-
-
-
