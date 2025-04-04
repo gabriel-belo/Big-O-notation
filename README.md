@@ -300,3 +300,66 @@ Problemas clássicos:
 Caixeiro Viajante (TSP): encontrar a menor rota que passa por várias cidades e volta ao ponto inicial (modo força bruta testa n! rotas).
 
 Permutação de senhas, combinando diferentes elementos.
+
+
+<h2>Big O para múltiplas entradas</h2>
+Quando você tem mais de uma entrada em uma função e precisa analisar a complexidade de tempo (Big O) dela, o valor de 
+𝑛 geralmente se refere ao número de entradas ou ao tamanho das entradas que dominam o comportamento da função.
+
+1.Várias entradas independentes: Se a função recebe várias entradas independentes, como por exemplo, 𝑛 e 𝑚, onde 𝑛 é o tamanho de uma lista e 𝑚 é o tamanho de outra, o Big O da função geralmente depende de como essas entradas afetam o desempenho da função. O tempo de execução é expresso em termos de 𝑛 e m, e você pode representar o Big O como uma combinação das duas variáveis. Por exemplo:
+<ul>
+  <li>Se o tempo de execução é diretamente proporcional a 𝑛 e 𝑚, a complexidade seria 𝑂(𝑛⋅𝑚).</li>
+  <li>Se uma das variáveis é muito maior que a outra, você pode simplificar para a maior delas. Por exemplo, se 𝑛 é muito maior que 𝑚, o tempo de execução seria aproximadamente O(n).</li>
+</ul>
+
+2.Entradas relacionadas (como vetores ou matrizes): Se as entradas forem vetores ou matrizes, o tamanho 𝑛 pode ser interpretado de formas diferentes dependendo de como você define as dimensões.
+<ul>
+  <li>Para uma matriz de tamanho 𝑛 × 𝑚, o Big O geralmente é 𝑂(𝑛 ⋅ 𝑚), pois o algoritmo pode precisar percorrer todos os elementos da matriz.</li>
+  <li>Se você tiver um vetor de vetores, o Big O pode depender do número de elementos e do número de vetores.</li>
+</ul>
+Vamos analisar diferentes cenários e como calcular o Big O em cada um deles:
+
+Suponha que você tenha:
+
+n: O número de vetores (o número de listas dentro da lista principal).
+m: O número máximo de elementos em qualquer um dos vetores internos. É importante notar que os vetores internos podem ter tamanhos diferentes.
+Cenários Comuns e seus Big O:
+
+Acessar um elemento específico:
+
+Para acessar um elemento em uma posição específica (por exemplo, o elemento na linha i e coluna j), você precisa realizar um acesso ao vetor externo (índice i) e depois um acesso ao vetor interno (índice j). Ambas as operações levam tempo constante, O(1).
+Big O: O(1)
+Iterar por todos os elementos:
+
+Para visitar cada elemento em todos os vetores internos, você precisará de um loop externo para percorrer os n vetores e um loop interno para percorrer os elementos de cada vetor.
+No pior caso, cada vetor interno terá m elementos.
+Big O: O(n * m)
+Encontrar um elemento específico (sem saber a posição):
+
+Você precisará percorrer todos os vetores e, dentro de cada vetor, verificar cada elemento até encontrar o desejado (ou percorrer todos sem encontrar).
+No pior caso, você terá que verificar todos os n * m elementos.
+Big O: O(n * m)
+Adicionar um elemento ao final de um vetor interno específico:
+
+Se você souber qual vetor interno adicionar o elemento, a operação de adicionar ao final de um vetor (geralmente usando append ou similar) geralmente leva tempo constante, O(1) em média (devido à alocação dinâmica de memória).
+Big O: O(1) (em média)
+Inserir um elemento no meio de um vetor interno específico:
+
+Inserir um elemento no meio de um vetor interno requer deslocar todos os elementos subsequentes para abrir espaço. No pior caso (inserir no início), isso levará um tempo proporcional ao número de elementos restantes no vetor interno.
+Big O: O(m) (no pior caso, para um vetor interno)
+Ordenar cada vetor interno:
+
+Se você precisar ordenar cada um dos n vetores internos, e cada vetor tem no máximo m elementos, usando um algoritmo de ordenação eficiente como o mergesort ou o quicksort, a complexidade para ordenar um único vetor será O(m log m).
+Como você faz isso para n vetores, a complexidade total será:
+Big O: O(n * m log m)
+Considerações Importantes:
+
+Relação entre n e m: O Big O final dependerá da relação entre n e m.
+
+Se o número de vetores for constante e o tamanho dos vetores internos variar, o Big O pode ser expresso em termos de m.
+Se o tamanho dos vetores internos for limitado por uma constante e o número de vetores aumentar, o Big O pode ser expresso em termos de n.
+Em muitos casos, ambos n e m podem variar, então a complexidade será expressa em função de ambos.
+Operação específica: O Big O sempre se refere a uma operação específica que você está realizando no vetor de vetores. Diferentes operações terão complexidades diferentes.
+
+Melhor Caso, Pior Caso e Caso Médio: Assim como para estruturas de dados unidimensionais, as operações em vetores de vetores também podem ter diferentes complexidades dependendo do melhor, pior e caso médio. As análises acima geralmente focam no pior caso, que é o mais comum para descrever a limitação superior do desempenho.
+
