@@ -312,6 +312,8 @@ Quando você tem mais de uma entrada em uma função e precisa analisar a comple
   <li>Se uma das variáveis é muito maior que a outra, você pode simplificar para a maior delas. Por exemplo, se 𝑛 é muito maior que 𝑚, o tempo de execução seria aproximadamente O(n).</li>
 </ul>
 
+Ação: Identifique qual entrada causa o maior número de iterações ou operações significativas. O Big O será expresso principalmente em função do tamanho dessa entrada dominante, considerando como as outras entradas influenciam as operações internas.
+
 2.Entradas relacionadas (como vetores ou matrizes): Se as entradas forem vetores ou matrizes, o tamanho 𝑛 pode ser interpretado de formas diferentes dependendo de como você define as dimensões.
 <ul>
   <li>Para uma matriz de tamanho 𝑛 × 𝑚, o Big O geralmente é 𝑂(𝑛 ⋅ 𝑚), pois o algoritmo pode precisar percorrer todos os elementos da matriz.</li>
@@ -362,4 +364,40 @@ Em muitos casos, ambos n e m podem variar, então a complexidade será expressa 
 Operação específica: O Big O sempre se refere a uma operação específica que você está realizando no vetor de vetores. Diferentes operações terão complexidades diferentes.
 
 Melhor Caso, Pior Caso e Caso Médio: Assim como para estruturas de dados unidimensionais, as operações em vetores de vetores também podem ter diferentes complexidades dependendo do melhor, pior e caso médio. As análises acima geralmente focam no pior caso, que é o mais comum para descrever a limitação superior do desempenho.
+
+<h4>3. Caso O(f(n1, n2, n3, ..., nk)):</h4>
+Esta é a forma mais geral de expressar o Big O para uma função com k entradas de tamanhos n1, n2, ..., nk. O Big O será uma função que descreve como o tempo de execução escala em relação a cada um desses tamanhos.
+
+O Big O desta função seria O(p * (n + m)), onde n é o tamanho de lista1, m é o tamanho de lista2 e p é num_iteracoes. Não podemos simplificar mais sem saber a relação entre n, m e p.
+
+<h3>formas de verificar o Big O para múltiplas entradas em uma função:</h3>
+<h4>1. Análise Teórica (Inspeção do Código):</h4>
+Esta é a abordagem fundamental e envolve analisar a estrutura do seu código para entender como o tempo de execução escala com o tamanho de cada entrada.
+<ul>
+  <li>Identifique os loops: Cada loop geralmente contribui para a complexidade. Se você tem um loop que itera sobre a primeira entrada (de tamanho n) e outro loop aninhado que itera sobre a segunda entrada (de tamanho m), a complexidade será O(n * m). Se os loops forem sequenciais, a complexidade será O(n + m).</li>
+  <li>Analise as operações dentro dos loops: As operações dentro dos loops também têm sua própria complexidade. Por exemplo, se dentro de um loop sobre a entrada de tamanho n, você realiza uma operação que leva O(log m) tempo (onde m é o tamanho da outra entrada), a contribuição desse loop para a complexidade total seria O(n log m).</li>
+  <li>Considere as estruturas de dados utilizadas: As operações em diferentes estruturas de dados têm complexidades diferentes. Por exemplo, acessar um elemento em um array é O(1), mas em uma lista ligada pode ser O(k) onde k é a posição. Operações de busca e inserção em árvores balanceadas geralmente são O(log k), onde k é o número de nós.</li>
+  <li>Determine o pior caso: O Big O geralmente descreve o limite superior do tempo de execução no pior caso possível para os tamanhos das entradas. Considere os cenários que levariam ao maior número de operações.</li>
+  <li>gnore constantes e termos de menor ordem: Lembre-se das regras do Big O. Constantes multiplicativas e termos de menor ordem são descartados. Por exemplo, O(2n + 3m + n^2) simplifica para O(n^2 + m) se n puder ser significativamente maior que m, ou permanece O(n^2 + m) se não houver uma relação definida entre eles.</li>
+</ul>
+
+<h4>2. Análise Empírica (Medição de Tempo de Execução):</h4>
+Esta abordagem envolve executar a função com diferentes tamanhos de entradas e medir o tempo de execução para observar como ele cresce.
+<ul>
+  <li>Crie conjuntos de dados de tamanhos variados: Gere entradas para sua função onde os tamanhos de cada parâmetro variem independentemente. Por exemplo, se sua função recebe duas listas, crie testes com diferentes comprimentos para a primeira lista enquanto mantém o comprimento da segunda constante, e vice-versa.</li>
+  <li>Meça o tempo de execução: Use bibliotecas de cronometragem (como time em Python) para medir o tempo que a função leva para executar com cada conjunto de dados.</li>
+    <li>Plote os resultados: Plote o tempo de execução em função do tamanho de cada entrada. Se você tiver duas entradas (n e m), pode ser útil criar gráficos separados para observar a relação com cada uma delas isoladamente (mantendo a outra constante).
+  </li>
+    <li>Ajuste curvas: Tente ajustar diferentes funções de complexidade (linear, quadrática, logarítmica, etc.) aos seus dados plotados. A curva que melhor se ajustar aos seus pontos de dados pode indicar o Big O da sua função em relação a essas entradas.
+  </li>
+</ul>
+
+
+Considerações para Análise Empírica:
+<ul>
+  <li>Variações de hardware e software: Os tempos de execução podem variar dependendo do seu hardware, sistema operacional e outras aplicações em execução. Execute os testes várias vezes e tire uma média para obter resultados mais confiáveis.</li>
+  <li>Tamanhos de entrada: Certifique-se de usar uma variedade suficientemente grande de tamanhos de entrada para observar a tendência de crescimento. Para tamanhos pequenos, as constantes podem dominar o tempo de execução, dificultando a identificação do comportamento assintótico.</li>
+  <li>Ruído: Os resultados empíricos podem ser ruidosos. É importante realizar testes suficientes para identificar a tendência geral.  </li>
+</ul>
+
 
